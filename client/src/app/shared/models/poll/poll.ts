@@ -19,9 +19,17 @@ export class Poll extends BaseDecimalModel<Poll> {
     public votescast: number;
     public onehundred_percent_base: PollPercentBase;
     public majority_method: MajorityMethod;
+
+    /**
+     * START is this used anymore?
+     */
     public voted_id: number[];
     public user_has_voted: boolean;
     public user_has_voted_for_delegations: Id[];
+    /**
+     * END
+     */
+
     public pollmethod: PollMethod;
 
     public voted_ids: Id[]; // (user/poll_voted_$<meeting_id>_ids)[];
