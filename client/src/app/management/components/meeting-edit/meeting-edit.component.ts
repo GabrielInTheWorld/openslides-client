@@ -59,8 +59,8 @@ export class MeetingEditComponent extends BaseModelContextComponent implements O
         private colorService: ColorService
     ) {
         super(componentServiceCollector);
-        this.createForm();
         this.createOrEdit();
+        this.createForm();
         this.getRouteParams();
 
         if (this.isCreateView) {
@@ -179,7 +179,7 @@ export class MeetingEditComponent extends BaseModelContextComponent implements O
         const currentDate = new Date();
         currentDate.setHours(0, 0, 0, 0);
 
-        this.meetingForm = this.formBuilder.group({
+        const rawForm: any = {
             name: ['', Validators.required],
             // server bug
             // set_as_template: [false],
@@ -189,14 +189,25 @@ export class MeetingEditComponent extends BaseModelContextComponent implements O
             end_time: [currentDate],
             user_ids: [[]],
             organization_tag_ids: [[]]
-        });
+        };
+
+        if (!this.isCreateView) {
+            rawForm.jitsi_domain = [[]];
+            rawForm.jitsi_room_name = [[]];
+            rawForm.jitsi_room_password = [[]];
+        }
+
+        this.meetingForm = this.formBuilder.group(rawForm);
     }
 
     private updateForm(meeting: ViewMeeting): void {
         const patchMeeting: any = meeting.getUpdatedModelData({
             start_time: meeting.start_time ? new Date(meeting.start_time * 1000) : undefined,
             end_time: meeting.end_time ? new Date(meeting.end_time * 1000) : undefined,
-            user_ids: [...meeting.user_ids]
+            user_ids: [...meeting.user_ids],
+            jitsi_domain: meeting.jitsi_domain,
+            jitsi_room_name: meeting.jitsi_room_name,
+            jitsi_room_password: meeting.jitsi_room_password
         } as any);
         this.meetingForm.patchValue(patchMeeting);
     }

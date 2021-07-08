@@ -1,0 +1,20 @@
+.bar-wrapper {
+    min-width: 30px;
+    height: 100%;
+
+    .progress-bar {
+        display: block;
+        width: 30px;
+        height: 100%;
+        margin-left: auto;
+    }
+}
+
+.level-indicator {
+    display: block;
+    text-align: center;
+
+    .level {
+        display: inline-block;
+    }
+}

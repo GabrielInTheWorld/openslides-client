@@ -92,7 +92,6 @@ import { AssignmentPollDetailContentComponent } from './components/assignment-po
 
 import { GlobalSpinnerComponent } from './components/global-spinner/global-spinner.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
-import { JitsiComponent } from './components/jitsi/jitsi.component';
 import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component';
 import { LiveStreamComponent } from './components/live-stream/live-stream.component';
 import { ListOfSpeakersContentComponent } from './components/list-of-speakers-content/list-of-speakers-content.component';
@@ -115,6 +114,8 @@ import { CustomTranslationComponent } from './components/custom-translation/cust
 import { UserMultiselectActionsComponent } from './components/user-multiselect-actions/user-multiselect-actions.component';
 import { UserChangePasswordComponent } from './components/user-change-password/user-change-password.component';
 import { FileUploadComponent } from './components/file-upload/file-upload.component';
+import { VideoPlayerComponent } from './components/video-player/video-player.component';
+import { ProgressComponent } from './components/progress/progress.component';
 
 const declarations = [
     PermsDirective,
@@ -176,7 +177,6 @@ const declarations = [
     VotingPrivacyWarningComponent,
     MotionPollDetailContentComponent,
     AssignmentPollDetailContentComponent,
-    JitsiComponent,
     VjsPlayerComponent,
     LiveStreamComponent,
     ListOfSpeakersContentComponent,
@@ -197,7 +197,9 @@ const declarations = [
     CustomTranslationComponent,
     UserMultiselectActionsComponent,
     UserChangePasswordComponent,
-    FileUploadComponent
+    FileUploadComponent,
+    VideoPlayerComponent,
+    ProgressComponent
 ];
 
 const sharedModules = [

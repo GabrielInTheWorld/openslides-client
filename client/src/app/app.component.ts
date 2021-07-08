@@ -22,6 +22,8 @@ import { ServertimeService } from './core/core-services/servertime.service';
 import { SpinnerService } from './core/ui-services/spinner.service';
 import { ThemeService } from './core/ui-services/theme.service';
 import { VotingBannerService } from './core/ui-services/voting-banner.service';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Angular's global App Component
@@ -61,7 +63,9 @@ export class AppComponent implements OnInit {
         routingState: RoutingStateService,
         votingBannerService: VotingBannerService, // needed for initialisation
         offlineSerice: OfflineService,
-        private openslidesStatus: OpenSlidesStatusService
+        private openslidesStatus: OpenSlidesStatusService,
+        private matIconRegistry: MatIconRegistry,
+        private domSanitizer: DomSanitizer
     ) {
         spinnerService.show(null, { hideWhenStable: true });
         // manually add the supported languages
@@ -75,6 +79,8 @@ export class AppComponent implements OnInit {
 
         // change default JS functions
         overloadJsFunctions();
+
+        this.loadCustomIcons();
 
         this.waitForAppLoaded();
     }
@@ -97,6 +103,13 @@ export class AppComponent implements OnInit {
         setTimeout(() => {
             this.lifecycleService.appLoaded.next();
         }, 0);
+    }
+
+    private loadCustomIcons(): void {
+        this.matIconRegistry.addSvgIcon(
+            `clapping_hands`,
+            this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/svg/clapping_hands.svg')
+        );
     }
 
     public ngOnInit(): void {
