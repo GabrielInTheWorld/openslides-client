@@ -1,7 +1,3 @@
-<div>Jitsi? {{ isConfStateJitsi | async }}</div>
-<div>LiveConf? {{ isConfStateStream | async }}</div>
-<div>None? {{ isConfStateNone | async }}</div>
-
 <div class="interaction-bar-wrapper" *ngIf="!(isConfStateNone | async)">
     <ng-container *ngIf="isConfStateJitsi | async">
         <ng-container *ngIf="(isJoined | async) && !(showCallDialog | async)">
