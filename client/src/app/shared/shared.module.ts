@@ -92,8 +92,6 @@ import { AssignmentPollDetailContentComponent } from './components/assignment-po
 
 import { GlobalSpinnerComponent } from './components/global-spinner/global-spinner.component';
 import { UserMenuComponent } from './components/user-menu/user-menu.component';
-import { VjsPlayerComponent } from './components/vjs-player/vjs-player.component';
-import { LiveStreamComponent } from './components/live-stream/live-stream.component';
 import { ListOfSpeakersContentComponent } from './components/list-of-speakers-content/list-of-speakers-content.component';
 import { ImageComponent } from './components/image/image.component';
 import { OnlyNumberDirective } from './directives/only-number.directive';
@@ -177,8 +175,6 @@ const declarations = [
     VotingPrivacyWarningComponent,
     MotionPollDetailContentComponent,
     AssignmentPollDetailContentComponent,
-    VjsPlayerComponent,
-    LiveStreamComponent,
     ListOfSpeakersContentComponent,
     ImageComponent,
     OnlyNumberDirective,
