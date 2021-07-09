@@ -37,7 +37,6 @@ export class ApplauseParticleDisplayComponent extends BaseComponent {
         private applauseService: ApplauseService
     ) {
         super(componentServiceCollector);
-        console.warn(`'general_system_applause_particle_image' has to be implemented in meeting-settings-service.`);
         this.subscriptions.push(
             this.resizeSubject.pipe(auditTime(this.resizeAuditTime)).subscribe(size => {
                 this.updateParticleContainer(size);
@@ -45,7 +44,7 @@ export class ApplauseParticleDisplayComponent extends BaseComponent {
             applauseService.applauseLevelObservable.subscribe(applauseLevel => {
                 this.particleLevel = this.calcEmitterLevel(applauseLevel || 0);
             }),
-            settingService.get('applause_particle_image').subscribe(particleImage => {
+            settingService.get('applause_particle_image_url').subscribe(particleImage => {
                 this.particleImage = particleImage || undefined;
             })
         );

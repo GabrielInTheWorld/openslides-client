@@ -20,7 +20,7 @@
         </ng-container>
     </ng-container>
 
-    <ng-container *ngIf="(showLiveConf | async) && (isConfStateStream | async)">
+    <ng-container *ngIf="(showLiveConf | async) || (isConfStateStream | async)">
         <!-- Enter conference from stream -->
         <button
             mat-mini-fab
