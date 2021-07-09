@@ -4,12 +4,12 @@ import { Subject } from 'rxjs';
 import { auditTime } from 'rxjs/operators';
 import { Container } from 'tsparticles';
 
+import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
+import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
 import { ElementSize } from 'app/shared/directives/resized.directive';
+import { BaseComponent } from 'app/site/base/components/base.component';
 import { ApplauseService } from 'app/site/interaction/services/applause.service';
 import { particleConfig, particleOptions } from './particle-options';
-import { BaseComponent } from 'app/site/base/components/base.component';
-import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
-import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
 
 @Component({
     selector: 'os-applause-particle-display',

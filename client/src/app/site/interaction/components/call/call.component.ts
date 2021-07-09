@@ -11,10 +11,10 @@ import {
 } from '@angular/core';
 
 import { marker as _ } from '@biesbjerg/ngx-translate-extract-marker';
-import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
-import { BaseComponent } from 'app/site/base/components/base.component';
 import { Observable } from 'rxjs';
 
+import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
+import { BaseComponent } from 'app/site/base/components/base.component';
 import { ApplauseService } from '../../services/applause.service';
 import { CallRestrictionService } from '../../services/call-restriction.service';
 import { InteractionService } from '../../services/interaction.service';

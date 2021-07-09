@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
-import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
 
 import { Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, filter, map } from 'rxjs/operators';
 
+import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
 import { HttpService } from '../../../core/core-services/http.service';
 import { NotifyService } from '../../../core/core-services/notify.service';
 

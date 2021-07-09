@@ -2,11 +2,11 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/
 import { Router } from '@angular/router';
 
 import { marker as _ } from '@biesbjerg/ngx-translate-extract-marker';
+import { Observable } from 'rxjs';
+
 import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
 import { fadeInAnim, fadeInOutAnim } from 'app/shared/animations';
 import { BaseComponent } from 'app/site/base/components/base.component';
-import { Observable } from 'rxjs';
-
 import { ApplauseService } from '../../services/applause.service';
 import { CallRestrictionService } from '../../services/call-restriction.service';
 import { InteractionService } from '../../services/interaction.service';

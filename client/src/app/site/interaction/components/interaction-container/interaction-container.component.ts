@@ -1,10 +1,10 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 
-import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
-import { BaseComponent } from 'app/site/base/components/base.component';
 import { Observable } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
+import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
+import { BaseComponent } from 'app/site/base/components/base.component';
 import { ApplauseService } from '../../services/applause.service';
 import { InteractionService } from '../../services/interaction.service';
 import { RtcService } from '../../services/rtc.service';

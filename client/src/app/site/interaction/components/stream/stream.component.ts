@@ -11,10 +11,10 @@ import {
 
 import { Observable } from 'rxjs';
 
+import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
 import { BaseComponent } from 'app/site/base/components/base.component';
 import { ApplauseService } from '../../services/applause.service';
 import { StreamService } from '../../services/stream.service';
-import { ComponentServiceCollector } from 'app/core/ui-services/component-service-collector';
 
 @Component({
     selector: 'os-stream',

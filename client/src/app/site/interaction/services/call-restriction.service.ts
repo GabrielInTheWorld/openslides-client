@@ -4,10 +4,10 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged, map } from 'rxjs/operators';
 
 import { OperatorService } from 'app/core/core-services/operator.service';
+import { Permission } from 'app/core/core-services/permission';
+import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
 import { UserListIndexType } from 'app/site/agenda/models/view-list-of-speakers';
 import { CurrentListOfSpeakersService } from 'app/site/projector/services/current-list-of-speakers.service';
-import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
-import { Permission } from 'app/core/core-services/permission';
 
 @Injectable({
     providedIn: 'root'

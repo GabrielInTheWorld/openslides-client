@@ -1,10 +1,10 @@
 import { AgendaItemType } from '../agenda/agenda-item';
 import { Id } from 'app/core/definitions/key-types';
+import { ApplauseType } from 'app/site/interaction/services/applause.service';
 import { ChangeRecoMode, LineNumberingMode } from 'app/site/motions/motions.constants';
 import { BaseModel } from '../base/base-model';
 import { HasProjectionIds } from '../base/has-projectable-ids';
 import { MajorityMethod, PollMethod, PollPercentBase, PollType } from '../poll/poll-constants';
-import { ApplauseType } from 'app/site/interaction/services/applause.service';
 
 export type UserSortProperty = 'first_name' | 'last_name' | 'number';
 export type ExportCsvEncoding = 'utf-8' | 'iso-8859-15';

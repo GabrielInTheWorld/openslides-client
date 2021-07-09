@@ -1,4 +1,6 @@
 import { ApplicationRef, Component, OnInit } from '@angular/core';
+import { MatIconRegistry } from '@angular/material/icon';
+import { DomSanitizer } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 
 import { TranslateService } from '@ngx-translate/core';
@@ -22,8 +24,6 @@ import { ServertimeService } from './core/core-services/servertime.service';
 import { SpinnerService } from './core/ui-services/spinner.service';
 import { ThemeService } from './core/ui-services/theme.service';
 import { VotingBannerService } from './core/ui-services/voting-banner.service';
-import { MatIconRegistry } from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
 
 /**
  * Angular's global App Component

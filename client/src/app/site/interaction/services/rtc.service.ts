@@ -5,10 +5,10 @@ import { BehaviorSubject, combineLatest, Observable, Subject } from 'rxjs';
 import { distinctUntilChanged } from 'rxjs/operators';
 
 import { OperatorService } from 'app/core/core-services/operator.service';
+import { UserRepositoryService } from 'app/core/repositories/users/user-repository.service';
+import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
 import { CallRestrictionService } from './call-restriction.service';
 import { UserMediaPermService } from './user-media-perm.service';
-import { MeetingSettingsService } from 'app/core/ui-services/meeting-settings.service';
-import { UserRepositoryService } from 'app/core/repositories/users/user-repository.service';
 
 export const RTC_LOGGED_STORAGE_KEY = 'rtcIsLoggedIn';
 
