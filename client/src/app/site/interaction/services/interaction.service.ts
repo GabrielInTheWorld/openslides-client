@@ -46,32 +46,34 @@ export class InteractionService {
         private rtcService: RtcService,
         private callRestrictionService: CallRestrictionService
     ) {
-        combineLatest(
+        combineLatest([
             this.showLiveConfObservable,
             this.streamService.hasLiveStreamUrlObvervable,
             this.streamService.canSeeLiveStreamObservable,
             this.rtcService.isJitsiEnabledObservable,
             this.rtcService.isJoinedObservable,
             this.rtcService.isJitsiActiveObservable,
-            this.callRestrictionService.canEnterCallObservable,
-            (showConf, hasStreamUrl, canSeeStream, jitsiEnabled, inCall, jitsiActive, canEnterCall) => {
-                this.isInCall = inCall;
+            this.callRestrictionService.canEnterCallObservable
+        ])
+            .pipe(
+                map(([showConf, hasStreamUrl, canSeeStream, jitsiEnabled, inCall, jitsiActive, canEnterCall]) => {
+                    this.isInCall = inCall;
 
-                /**
-                 * most importantly, if there is a call, to not change the state here
-                 */
-                if (inCall || jitsiActive) {
-                    return;
-                }
-                if (hasStreamUrl && canSeeStream) {
-                    return ConferenceState.stream;
-                } else if (showConf && jitsiEnabled && canEnterCall && (!hasStreamUrl || !canSeeStream)) {
-                    return ConferenceState.jitsi;
-                } else {
-                    return ConferenceState.none;
-                }
-            }
-        )
+                    /**
+                     * most importantly, if there is a call, to not change the state here
+                     */
+                    if (inCall || jitsiActive) {
+                        return;
+                    }
+                    if (hasStreamUrl && canSeeStream) {
+                        return ConferenceState.stream;
+                    } else if (showConf && jitsiEnabled && canEnterCall && (!hasStreamUrl || !canSeeStream)) {
+                        return ConferenceState.jitsi;
+                    } else {
+                        return ConferenceState.none;
+                    }
+                })
+            )
             .pipe(distinctUntilChanged())
             .subscribe(state => {
                 if (state) {
