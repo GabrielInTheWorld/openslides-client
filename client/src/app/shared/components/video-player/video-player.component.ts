@@ -104,10 +104,9 @@ export class VideoPlayerComponent implements AfterViewInit, OnDestroy {
         private cd: ChangeDetectorRef,
         private osStatus: OpenSlidesStatusService
     ) {
-        // settingService.get('general_system_stream_poster').subscribe(posterUrl => {
-        //     this.posterUrl = posterUrl?.trim();
-        // });
-        // settingService.get('stre')
+        settingService.get('conference_stream_poster_url').subscribe(posterUrl => {
+            this.posterUrl = posterUrl?.trim();
+        });
 
         /**
          * external iFrame will block loading, since for some reason the app will

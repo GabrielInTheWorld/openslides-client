@@ -165,7 +165,7 @@ export const meetingSettings: SettingsGroup[] = [
                         default: 0
                     },
                     {
-                        key: 'conference_stream_poster',
+                        key: 'conference_stream_poster_url',
                         label: 'Livestream poster image url',
                         helpText: 'Shows if livestream is not started. Recommended image format: 500x280px, PNG or JPG'
                     },
@@ -224,7 +224,7 @@ export const meetingSettings: SettingsGroup[] = [
                         default: 5
                     },
                     {
-                        key: 'applause_particle_image',
+                        key: 'applause_particle_image_url',
                         label: 'Applause particle image URL',
                         helpText:
                             'Shows the given image as applause particle. Recommended image format: 24x24px, PNG, JPG or SVG'

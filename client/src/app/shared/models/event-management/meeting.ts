@@ -51,7 +51,7 @@ export interface Settings {
     conference_open_microphone: boolean;
     conference_open_video: boolean;
     conference_auto_connect_next_speakers: number;
-    conference_stream_poster: string;
+    conference_stream_poster_url: string;
     conference_enable_helpdesk: boolean;
 
     // Applause
@@ -61,7 +61,7 @@ export interface Settings {
     applause_min_amount: number;
     applause_max_amount: number;
     applause_timeout: number;
-    applause_particle_image: string;
+    applause_particle_image_url: string;
 
     // Projector
     projector_countdown_default_time: number;
