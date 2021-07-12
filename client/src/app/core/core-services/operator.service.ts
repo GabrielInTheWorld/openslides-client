@@ -400,6 +400,9 @@ export class OperatorService {
             console.warn('has perms: Usage outside of meeting!');
             return false;
         }
+        if (this.hasOrganizationPermissions(OML.superadmin)) {
+            return true;
+        }
 
         let result: boolean;
         if (!this.groupIds) {
